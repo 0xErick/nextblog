@@ -14,6 +14,7 @@ Post.getInitialProps = async function (context) {
   const res = await fetch(`https://raw.githubusercontent.com/saqing/nextblog-content/master/${id}.json`)
   const show = await res.json()
 
+
   console.log(`Fetched show: ${show.name}`)
 
   return { show }
