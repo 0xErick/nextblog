@@ -1,17 +1,24 @@
 import Layout from '../components/Layout.js'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import Post from '../components/Post'
 
+const styles = {
+  post: {
+    minWidth: '760px',
+    maxWidth: '900px',
+    marginTop: '20px'
+  }
+}
 const Index = (props) => (
   <Layout>
-    <h1>Batman TV Shows</h1>
     <ul>
       {props.shows.map(({ show }) => (
-        <li key={show.id}>
-          <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-            <a>{show.name}</a>
-          </Link>
-        </li>
+        <div key={show.id} style={styles.post}>
+          <Post.Header title={show.name} id={show.id} meta="2018-05-16" />
+          <Post.Content />
+        </div>
+
       ))}
     </ul>
   </Layout>

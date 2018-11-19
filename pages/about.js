@@ -1,10 +1,10 @@
 import Layout from '../components/Layout'
 const Index = () => (
   <div>
-      <Layout>
+    <Layout>
       <p>关于页面</p>
 
-      </Layout>
+    </Layout>
 
   </div>
 )
